@@ -4,7 +4,7 @@ const { interface, bytecode } = require('./compile.js');
 
 const provider = new HDWalletProvider(
   '', // Mnemonic from Metamask
-  'https://rinkeby.infura.io/v3/xxxxxxxxxxxxxxxxxx'// Infura API
+  'https://rinkeby.infura.io/v3/XXXXXXXXXXXXXXXXXXXXXXX'// Infura API
 );
 
 const web3 = new Web3(provider);
@@ -18,6 +18,7 @@ const deploy = async () => {
   .deploy({ data: bytecode })
   .send({ from: accounts[0], gas: '1000000' });
 
+  console.log('Inteface: ', interface);
   console.log('Contract deployed to: ', result.options.address);
 };
 
